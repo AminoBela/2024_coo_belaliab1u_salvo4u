@@ -68,6 +68,47 @@ public class Magasin {
 		return(res);
 	}
 
-	// TODO  ajouter une methode de tri
+	/**
+	 * trie les CDs du magasin par album
+	 */
+
+	public void trierAlbum(){
+		ArrayList<CD> cd_trie = new ArrayList<>();
+		while(!this.listeCds.isEmpty()){
+			CD min = this.listeCds.get(0);
+			int ind =0;
+			int ind_val =0;
+			for(CD v : this.listeCds){
+				if(min.getCD().compareTo(v.getCD())<0){
+					min = v;
+					ind_val = ind;
+				}
+				ind++;
+			}
+			cd_trie.add(min);
+			this.listeCds.remove(ind_val);
+		}
+		this.listeCds = cd_trie;
+	}
+
+	/**
+	 * trie les CDs du magasin par artiste
+	 */
+
+	public void trierAriste() {
+		ArrayList<CD> listeCdsTries = new ArrayList<CD>();
+		while (!listeCds.isEmpty()) {
+			int indiceMin = 0;
+			for (int i = 1; i < listeCds.size(); i++) {
+				if (listeCds.get(i).getArtiste().compareTo(listeCds.get(indiceMin).getArtiste()) < 0) {
+					indiceMin = i;
+				}
+			}
+			listeCdsTries.add(listeCds.get(indiceMin));
+			listeCds.remove(indiceMin);
+		}
+		listeCds = listeCdsTries;
+	}
+
 
 }

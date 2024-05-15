@@ -1,0 +1,9 @@
+Le diagramme de séquence décrit comment un magasin de CDs est chargé à partir de fichiers XML. 
+Le processus commence par l'initialisation d'un objet ChargeurMagasin avec le répertoire contenant les fichiers XML. 
+La méthode chargerMagasin est ensuite appelée, ce qui déclenche la création d'un objet ChargeurCD pour chaque fichier XML dans le répertoire. 
+Chaque ChargeurCD utilise sa méthode chargerCD pour lire les données du fichier XML et créer un objet CD. 
+Les objets CD sont alors ajoutés à l'objet Magasin, qui les stocke tous. 
+Enfin, la méthode chargerMagasin retourne l'objet Magasin rempli avec tous les CDs chargés.
+
+Ce diagramme illustre clairement le flux d'exécution pour charger les données des CDs en mémoire, 
+montrant les interactions entre les objets ChargeurMagasin, ChargeurCD, et Magasin pour aboutir à un magasin complet de CDs prêts à être utilisés.

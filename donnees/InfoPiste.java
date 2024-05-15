@@ -62,4 +62,9 @@ public class InfoPiste {
 			sSecondes = "0" + secondes;
 		return ("" + min + ":" + sSecondes);
 	}
+
+/**
+	 * @return le nom de la piste
+	 */
+
 }
